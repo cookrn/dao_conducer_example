@@ -17,3 +17,7 @@ This app models dog walkers and their dogs. The `ActiveRecord` models and schema
 ## Libraries
 
 * `dao` -- [https://github.com/ahoward/dao](https://github.com/ahoward/dao)
+
+## TODO
+
+* build out example views/forms utilizing bootstrap

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ahoward/dao.git
-  revision: 6eebd84ccc29408237a641f1e92b739660fc1b6b
+  revision: 2c16a4cef543d567bef1aa229a3e8890078cf954
   specs:
     dao (4.3.0)
       fattr (>= 2.2)
@@ -49,7 +49,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.2.0)
+    coffee-script-source (1.3.1)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)

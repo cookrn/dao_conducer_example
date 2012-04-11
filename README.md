@@ -13,6 +13,7 @@ This app models dog walkers and their dogs. The `ActiveRecord` models and schema
 
 * `app/conducers/dog_walker_conducer.rb`
 * `test/unit/app/conducers/dog_walker_conducer_test.rb`
+* `lib/active_record/base.rb` (See: [https://gist.github.com/2347973](https://gist.github.com/2347973))
 
 ## Libraries
 

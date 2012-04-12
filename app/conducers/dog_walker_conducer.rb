@@ -19,6 +19,14 @@ class DogWalkerConducer < Dao::Conducer
     update_attributes params
   end
 
+  def display_attribute_value( val )
+    if val.class.ancestors.include?( Enumerable )
+      val.size
+    else
+      val
+    end
+  end
+
   def save
     update_dog_walker!
     update_dogs!

@@ -7,6 +7,13 @@ class DogWalkersController < ApplicationController
     )
   end
 
+  def edit
+    @conducer = DogWalkerConducer.for(
+      :edit,
+      DogWalker.find( params[ :id ] )
+    )
+  end
+
   def index
     @dog_walkers = DogWalker.all.map! do | walker |
       DogWalkerConducer.for(

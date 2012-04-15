@@ -1,0 +1,56 @@
+<%= dao_form_for @conducer , :class => "form-horizontal" do | f | %>
+  <fieldset>
+    <div class="row form-row">
+      <div class="span2">
+        <div class="pull-right">
+          <%= f.label :name %>
+        </div>
+      </div>
+      <div class="span10">
+        <div class="well">
+          <%= f.input :name %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row form-row">
+    <div class="span2">
+      <div class="pull-right">
+        <h3>Dogs</h3>
+      </div>
+    </div>
+    <div class="span10">
+      <div class="well">
+        <% @conducer.attributes.dogs.each_with_index do | dog , dog_index | %>
+          <fieldset>
+            <%
+              id_key = [ :dogs , dog_index , :id ]
+              id_id  = f.id_for key + [ dog.id ]
+            %>
+            <%= f.input id_key , :id => id_id , :type => :hidden %>
+            <%
+              name_key = [ :dogs , dog_index , :name ]
+              name_id  = f.id_for key + [ dog.id ]
+            %>
+            <div class="control-group">
+              <%= f.label( name_key , :class => "control-label" , :for => name_id ){ "Name" } %>
+              <div class="controls">
+                <div class="input-append">
+                  <%= f.input name_key , :id => name_id , :class => "span2" %>
+                  <button class="btn" type="button">X</button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="pull-right">
+        <%= f.submit "Save" , :class => "btn btn-large btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>

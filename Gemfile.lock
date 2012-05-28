@@ -11,6 +11,13 @@ GIT
       tagz (>= 9.3)
       wrap (>= 1.5.0)
 
+GIT
+  remote: git://github.com/cookrn/map.git
+  revision: 8f03eb52ba9e9027baecb73dfcce63fd44eccb23
+  branch: cookrn_active_record_integration
+  specs:
+    map (5.6.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -69,7 +76,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    map (5.5.0)
     method_source (0.7.1)
     mime-types (1.18)
     multi_json (1.2.0)
@@ -136,6 +142,7 @@ DEPENDENCIES
   dao!
   ffi-uuid
   jquery-rails
+  map!
   pry
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)

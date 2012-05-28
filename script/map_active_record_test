@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../config/environment',  __FILE__)
+require 'pp'
+
+d = Dog.first
+
+puts '============================'
+pp 'Load a model'
+pp 'd = Dog.first'
+puts '============================'
+pp d
+puts '============================'
+puts
+
+puts '============================'
+pp 'Standard `to_map`'
+pp 'd.to_map'
+puts '============================'
+pp d.to_map
+puts '============================'
+puts
+
+puts '============================'
+pp '`to_map` with exclude'
+pp 'd.to_map :without => :name'
+puts '============================'
+pp d.to_map :without => :name
+puts '============================'
+puts
+
+puts '============================'
+pp '`to_map` with multiple exclude'
+pp 'd.to_map :excludes => [ :name , :created_at ]'
+puts '============================'
+pp d.to_map :excludes => [ :name , :created_at ]
+puts '============================'
+puts
+
+puts '============================'
+pp '`to_map` with related include'
+pp 'd.to_map :include => :dog_walker'
+puts '============================'
+pp d.to_map :include => :dog_walker
+puts '============================'
+puts
+
+puts '============================'
+pp '`to_map` with related include with nested without'
+pp 'd.to_map :include => { :dog_walker => { :without => :created_at }'
+puts '============================'
+pp d.to_map :include => { :dog_walker => { :without => :created_at } }
+puts '============================'
+puts
+
+puts '============================'
+pp '`to_map` without field and with related include with nested without'
+pp 'd.to_map :exclude => :name , :include => { :dog_walker => { :without => :created_at }'
+puts '============================'
+pp d.to_map :exclude => :name , :include => { :dog_walker => { :without => :created_at } }
+puts '============================'
+puts
